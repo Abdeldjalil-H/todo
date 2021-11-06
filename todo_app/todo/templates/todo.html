@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'css/style.css' %}">
+    <script>
+        const tasksListUrl = "{%url 'api:tasks_list'%}";
+        const taskDeleteUrl = "{%url 'api:task_delete' 0 %}";
+        const taskUpdateUrl = "{%url 'api:task_update' 0 %}";
+    </script>
+</head>
+<body>
+    <section>
+        <div class="custom-checkbox">
+            <input type="checkbox" id="dark-mode">
+            <label for="dark-mode"><span></span></label>
+        </div>
+        <p>Task List</p>
+        <div class="labeled-input">
+            <input type="text" id="input-add" data-url="{%url 'api:task_create'%}">
+            <label for="input-add">New task</label>
+        </div>
+        <button id="add-btn" class="green-btn">Add Task</button>
+        <h3>Tasks</h3>
+        <div class="labeled-input">
+            <input type="text" id="input-filter">
+            <label for="input-filter">Filter tasks</label>
+        </div>
+        <ul id="all-tasks"></ul>
+        <button id="clear-btn" class="black-btn" data-url="{%url 'api:tasks_clear'%}">Clear Tasks</button>
+    </section>
+    <script src="{%static 'js/main.js' %}"></script>
+</body>
+</html>

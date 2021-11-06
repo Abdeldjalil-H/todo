@@ -1,0 +1,127 @@
+:root {
+    --main-color: #26a69a;
+}
+* {
+    font-family: monospace, monospace;
+}
+body {
+    transition: 0.2s linear;
+}
+.dark {
+    background-color: #292c35;
+    color: #fff;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    border-radius: 2px;
+    padding: 15px;
+    box-shadow: 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+    max-width: 700px;
+    margin: 50px auto;
+}
+.custom-checkbox {
+    display: flex;
+    justify-content: space-between;
+}
+.custom-checkbox input {
+    appearance: none;
+}
+.custom-checkbox input + label {
+    background-color: #000;
+    width: 50px;
+    display: inline-flex;
+    height: 26px;
+    border-radius: 15px;
+    position: relative;
+}
+.custom-checkbox input + label span {
+    background-color: #fff;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: 0.3s;
+}
+.custom-checkbox input:checked + label span {
+    transform: translateX(24px);
+}
+p {
+    font-weight: 300;
+    font-size: 22px;
+}
+.labeled-input {
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+}
+.labeled-input label {
+    color: #7f7f7f;
+    font-size: 14px;
+    margin-left: 10px;
+    position: absolute;
+    bottom: 30px;
+    z-index: -1;
+    transition: 0.3s;
+}
+button {
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    color: white;
+    padding: 10px;
+    width: fit-content;
+    cursor: pointer;
+}
+button.green-btn {
+    background-color: var(--main-color);
+}
+button.black-btn {
+    background-color: #000;
+}
+input[type="text"] {
+    outline: none;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    width: calc(100% - 20px);
+    margin: 0 auto 20px;
+    background-color: inherit;
+    color: inherit;
+}
+input[type="text"]:focus {
+    border-bottom-color: var(--main-color);
+}
+input[type="text"]:focus + label {
+    color: var(--main-color);
+}
+input[type="text"]:focus + label,
+input + label.to-top {
+    bottom: 60px;
+    font-size: 12px;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+ul li {
+    padding: 10px;
+    background-color: var(--main-color);
+    color: white;
+    border-bottom: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: default;
+}
+ul li.completed {
+    text-decoration: line-through;
+}
+ul li svg {
+    color:orange;
+    width: 15px;
+    margin-right: 25px;
+    cursor: pointer;
+}
